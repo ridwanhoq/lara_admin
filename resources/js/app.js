@@ -19,7 +19,19 @@ window.Vue = require('vue').default;
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+
+// 
+import VueRouter from 'vue-router';
+
+Vue.use(VueRouter);
+
+import {routes} from './routes';
+
+const router = new VueRouter({
+    routes
+});
+
+Vue.component('admin-master-component', require('./components/admin/adminMasterComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -30,3 +42,51 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
+
+// 
+// import vueRouter from 'vue-router';
+
+// Vue.use(VueRouter);
+
+// const routes = [
+//     {
+//         path: '/',
+//         component: require('./components/HomeComponent.vue').default
+//     }
+// ];
+
+// const router = new VueRouter({
+//     routes
+// });
+
+
+// import vueRouter from 'vue-router';
+
+// Vue.use(VueRouter);
+
+// const routes = [
+//     {
+//         path: '/',
+//         component: require('./components/HomeComponent.vue').default
+//     }
+// ];
+
+// const router = new VueRouter({
+//     routes
+// });
+
+
+// import vueRouter from 'vue-router';
+
+// Vue.use(vueRouter);
+
+// const routes = [
+//     {
+//         path: '/',
+//         component: require('./components/HomeComponent.vue').default
+//     }
+// ];
+
+// const router = new VueRouter({
+//     routes
+// });
